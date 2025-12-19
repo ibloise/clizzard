@@ -1,0 +1,89 @@
+# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# ============================
+# Virtual environments
+# ============================
+.venv/
+venv/
+env/
+ENV/
+
+# Poetry / uv / pip-tools
+poetry.lock
+uv.lock
+pip-wheel-metadata/
+
+# ============================
+# Build / packaging
+# ============================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ============================
+# Pytest / coverage
+# ============================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+
+# ============================
+# Mypy / type checkers
+# ============================
+.mypy_cache/
+.pyright/
+.dmypy.json
+
+# ============================
+# Logs & runtime artefacts
+# ============================
+*.log
+logs/
+tmp/
+.cache/
+
+# ============================
+# Jupyter
+# ============================
+.ipynb_checkpoints/
+
+# ============================
+# OS / editor junk
+# ============================
+.DS_Store
+Thumbs.db
+*~
+
+# VS Code
+.vscode/
+
+# PyCharm / IntelliJ
+.idea/
+
+# ============================
+# CLI execution artefacts
+# (outputs de herramientas externas)
+# ============================
+out/
+output/
+results/
+work/
+*.stdout
+*.stderr
+
+# ============================
+# Local configuration
+# ============================
+.env
+.env.*
