@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clizzard"
+version = "0.1.0"
+description = "Model CLI commands and options as Python objects"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Iván Bloise Sánchez" }]
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clizzard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
