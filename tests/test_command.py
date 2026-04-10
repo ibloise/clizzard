@@ -1,7 +1,7 @@
 # tests/test_command.py
 import pytest
 
-from clizzard import Option
+from clizzard import Option, Positional
 from clizzard.command import Command
 
 
@@ -50,6 +50,22 @@ def test_command_combines_all_parts_in_order():
         "r2.fq.gz",
     ]
 
+
+
+
+def test_command_with_positional_objects():
+    cmd = Command(
+        "tool",
+        options=[Option("threads", 8)],
+        args=[Positional("input", "in.txt"), Positional("output", "out.txt")],
+    )
+
+    assert cmd.to_argv() == ["tool", "--threads", "8", "in.txt", "out.txt"]
+
+
+def test_command_with_variadic_positional_object():
+    cmd = Command("cat", args=[Positional("files", ["a.txt", "b.txt"], variadic=True)])
+    assert cmd.to_argv() == ["cat", "a.txt", "b.txt"]
 
 def test_raises_in_exe_empty_string():
     with pytest.raises(ValueError):
